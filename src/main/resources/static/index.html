@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Sales Performance Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+
+        <h1>📊 Sales Performance Dashboard</h1>
+
+        <p>Track • Analyze • Grow Business</p>
+
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="cards">
+
+        <div class="card sales-card">
+            <h2>💰 Total Sales</h2>
+            <h3 id="totalSales">Loading...</h3>
+        </div>
+
+        <div class="card profit-card">
+            <h2>📈 Total Profit</h2>
+            <h3 id="totalProfit">Loading...</h3>
+        </div>
+
+        <div class="card product-card">
+            <h2>📦 Total Products</h2>
+            <h3 id="salesCount">Loading...</h3>
+        </div>
+
+        <div class="card top-card">
+            <h2>🏆 Top Product</h2>
+            <h3 id="topProduct">Loading...</h3>
+        </div>
+
+    </div>
+
+    <!-- Region Table -->
+
+    <h2>Sales By Region</h2>
+
+    <table id="regionTable">
+
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Total Sales</th>
+            </tr>
+        </thead>
+
+        <tbody id="regionBody">
+
+        </tbody>
+
+    </table>
+
+    <!-- Charts -->
+
+    <h2>Sales Analytics</h2>
+
+    <div class="charts">
+
+        <div class="chart-container">
+
+            <h3>Region Sales (Bar Chart)</h3>
+
+            <canvas id="salesChart"></canvas>
+
+        </div>
+
+        <div class="chart-container">
+
+            <h3>Region Sales Distribution</h3>
+
+            <canvas id="pieChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- Monthly Sales -->
+
+    <h2>Monthly Sales Trend</h2>
+
+    <div class="chart-container">
+
+        <canvas id="monthlyChart"></canvas>
+
+    </div>
+
+    <!-- Search -->
+
+    <h2>All Products</h2>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Product..."
+            onkeyup="searchProduct()">
+
+    </div>
+
+    <!-- Region Filter -->
+
+    <div class="filter-box">
+
+        <select id="regionFilter" onchange="filterRegion()">
+
+            <option value="All">All Regions</option>
+            <option value="South">South</option>
+            <option value="North">North</option>
+            <option value="East">East</option>
+            <option value="West">West</option>
+
+        </select>
+
+    </div>
+
+    <!-- Product Table -->
+
+    <table id="productTable">
+
+        <thead>
+
+            <tr>
+
+                <th>Product</th>
+                <th>Sales</th>
+                <th>Profit</th>
+                <th>Region</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="productBody">
+
+        </tbody>
+
+    </table>
+
+    <!-- Add / Update Form -->
+
+    <h2>Add New Sale</h2>
+
+    <div class="form-container">
+
+        <input
+            type="text"
+            id="productName"
+            placeholder="Product Name">
+
+        <input
+            type="number"
+            id="sales"
+            placeholder="Sales">
+
+        <input
+            type="number"
+            id="profit"
+            placeholder="Profit">
+
+        <input
+            type="text"
+            id="region"
+            placeholder="Region">
+
+        <input
+            type="date"
+            id="saleDate">
+
+        <button
+            id="saveButton"
+            onclick="saveSale()">
+
+            Save Sale
+
+        </button>
+
+    </div>
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
