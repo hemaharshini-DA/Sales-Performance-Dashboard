@@ -399,4 +399,6 @@ function filterRegion() {
 
 	loadMonthlySales();
 
-
+	function exportExcel() {
+	    window.location.href = "http://localhost:8080/export/excel";
+	}

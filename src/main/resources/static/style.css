@@ -324,3 +324,18 @@ button:first-child:hover{
     border-top:6px solid #ff9800;
 
 }
+.export-btn {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.export-btn:hover {
+    background: #146c43;
+    transform: scale(1.05);
+}
