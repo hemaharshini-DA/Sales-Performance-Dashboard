@@ -136,7 +136,7 @@ http://localhost:8080
 
 ## 👩‍💻 Author
 
-**Hema Varshini**
+**Hema Harshini**
 
 GitHub:
 https://github.com/hemaharshini-DA
