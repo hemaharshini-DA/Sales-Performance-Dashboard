@@ -49,32 +49,41 @@ A modern Full-Stack Sales Performance Dashboard built using **Spring Boot**, **M
 
 ---
 
-## 📸 Application Screenshots
+ ## 📸 Application Screenshots
 
-### Login Page
+### 🔐 Login Page
 
-> *(Add login page screenshot here)*
-
-![Login Page](screenshots/login-page.png)
+![Login Page](screenshots/login.jpeg)
 
 ---
 
-### Dashboard
+### 📊 Dashboard Overview
 
-> *(Add dashboard screenshot here)*
-
-![Dashboard](screenshots/dashboard.png)
+![Dashboard Cards](screenshots/cards.jpeg)
 
 ---
 
-### Sales Analytics
+### 📈 Sales by Region (Bar Chart)
 
-> *(Add analytics screenshot here)*
-
-![Analytics](screenshots/analytics.png)
+![Bar Chart](screenshots/barchart.jpeg)
 
 ---
 
+### 🥧 Region Distribution (Pie Chart)
+
+![Pie Chart](screenshots/piechart.jpeg)
+
+---
+
+### 🔍 Search & Filter Products
+
+![Search](screenshots/search.jpeg)
+
+---
+
+### ✏️ Update Sales Record
+
+![Update](screenshots/update.jpeg)
 ## 📂 Project Structure
 
 ```
