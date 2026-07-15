@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sales Performance Dashboard</title>
 
@@ -15,66 +18,143 @@
 
 </head>
 
-<body>
+ <body>
 
-    <!-- Header -->
-    <div class="header">
+<div class="top-bar">
 
-        <h1>📊 Sales Performance Dashboard</h1>
+    <div class="header-content">
 
-        <p>Track • Analyze • Grow Business</p>
+        <div class="header-left">
+
+            <div class="dashboard-title">
+
+                <h1>Sales Performance Dashboard</h1>
+
+                <p class="subtitle">
+                    Track | Analyze | Grow Business
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+            <div class="export-buttons">
+
+                <button class="export-btn pdf-btn" onclick="exportPDF()">
+                    Export PDF
+                </button>
+
+                <button class="export-btn excel-btn" onclick="exportExcel()">
+                    Export Excel
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
-<div style="text-align:right; margin:20px;">
-    <button onclick="exportExcel()" class="export-btn">
-        📥 Export to Excel
-    </button>
+
 </div>
-    <!-- Dashboard Cards -->
+
+<div class="container">
+
+    <!-- ================= DASHBOARD CARDS ================= -->
+
     <div class="cards">
 
         <div class="card sales-card">
-            <h2>💰 Total Sales</h2>
-            <h3 id="totalSales">Loading...</h3>
+
+            <h2>Total Sales</h2>
+
+            <h3 id="totalSales">
+                Loading...
+            </h3>
+
         </div>
 
         <div class="card profit-card">
-            <h2>📈 Total Profit</h2>
-            <h3 id="totalProfit">Loading...</h3>
+
+            <h2>Total Profit</h2>
+
+            <h3 id="totalProfit">
+                Loading...
+            </h3>
+
         </div>
 
         <div class="card product-card">
-            <h2>📦 Total Products</h2>
-            <h3 id="salesCount">Loading...</h3>
+
+            <h2>Total Products</h2>
+
+            <h3 id="salesCount">
+                Loading...
+            </h3>
+
         </div>
 
         <div class="card top-card">
-            <h2>🏆 Top Product</h2>
-            <h3 id="topProduct">Loading...</h3>
+
+            <h2>Top Product</h2>
+
+            <h3 id="topProduct">
+                Loading...
+            </h3>
+
         </div>
 
     </div>
 
-    <!-- Region Table -->
+    <!-- ================= REGION TABLE + BAR CHART ================= -->
 
     <h2>Sales By Region</h2>
 
-    <table id="regionTable">
+    <div class="charts">
 
-        <thead>
-            <tr>
-                <th>Region</th>
-                <th>Total Sales</th>
-            </tr>
-        </thead>
+        <div class="chart-container">
 
-        <tbody id="regionBody">
+            <h3>Region Sales</h3>
 
-        </tbody>
+            <table id="regionTable">
 
-    </table>
+                <thead>
 
-    <!-- Charts -->
+                    <tr>
+
+                        <th>Region</th>
+
+                        <th>Total Sales</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="regionBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="chart-container">
+
+            <h3>Sales by Region</h3>
+
+            <canvas id="salesChart">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PIE CHART + MONTHLY CHART ================= -->
 
     <h2>Sales Analytics</h2>
 
@@ -82,55 +162,50 @@
 
         <div class="chart-container">
 
-            <h3>Region Sales (Bar Chart)</h3>
+            <h3>Region Distribution</h3>
 
-            <canvas id="salesChart"></canvas>
+            <canvas id="pieChart">
+
+            </canvas>
 
         </div>
 
         <div class="chart-container">
 
-            <h3>Region Sales Distribution</h3>
+            <h3>Monthly Sales Trend</h3>
 
-            <canvas id="pieChart"></canvas>
+            <canvas id="monthlyChart">
+
+            </canvas>
 
         </div>
 
     </div>
+        <!-- ================= ALL PRODUCTS ================= -->
 
-    <!-- Monthly Sales -->
+     <h2>All Products</h2>
 
-    <h2>Monthly Sales Trend</h2>
-
-    <div class="chart-container">
-
-        <canvas id="monthlyChart"></canvas>
-
-    </div>
-
-    <!-- Search -->
-
-    <h2>All Products</h2>
+<div class="search-filter">
 
     <div class="search-box">
 
         <input
             type="text"
             id="searchInput"
-            placeholder="Search Product..."
+            placeholder="🔍 Search Product..."
             onkeyup="searchProduct()">
 
     </div>
 
-    <!-- Region Filter -->
-
     <div class="filter-box">
 
-        <select id="regionFilter" onchange="filterRegion()">
+        <select
+            id="regionFilter"
+            onchange="filterRegion()">
 
-            <option value="All">All Regions</option>
-            <option value="South">South</option>
+            <option value="All">🌍 All Regions</option>
             <option value="North">North</option>
+            <option value="South">South</option>
             <option value="East">East</option>
             <option value="West">West</option>
 
@@ -138,8 +213,7 @@
 
     </div>
 
-    <!-- Product Table -->
-
+</div>
     <table id="productTable">
 
         <thead>
@@ -162,7 +236,7 @@
 
     </table>
 
-    <!-- Add / Update Form -->
+    <!-- ================= ADD NEW SALE ================= -->
 
     <h2>Add New Sale</h2>
 
@@ -176,7 +250,7 @@
         <input
             type="number"
             id="sales"
-            placeholder="Sales">
+            placeholder="Sales Amount">
 
         <input
             type="number"
@@ -202,13 +276,11 @@
 
     </div>
 
-    <!-- Chart.js -->
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- JavaScript -->
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 

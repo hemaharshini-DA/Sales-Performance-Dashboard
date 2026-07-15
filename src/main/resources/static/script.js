@@ -1,6 +1,11 @@
 // =======================
 // Global Variables
 // =======================
+if (sessionStorage.getItem("loggedIn") !== "true") {
+
+    window.location.href = "login.html";
+
+}
 let editingId = null;
 
 // =======================
@@ -401,4 +406,14 @@ function filterRegion() {
 
 	function exportExcel() {
 	    window.location.href = "http://localhost:8080/export/excel";
+	}
+	function exportPDF() {
+	    window.location.href = "http://localhost:8080/export/pdf";
+	}
+	function logout() {
+
+	    sessionStorage.removeItem("loggedIn");
+
+	    window.location.href = "login.html";
+
 	}

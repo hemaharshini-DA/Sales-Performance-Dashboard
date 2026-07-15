@@ -1,58 +1,220 @@
+/* =====================================================
+   SALES PERFORMANCE DASHBOARD
+   STYLE.CSS (PART 1)
+===================================================== */
+
+/* ===============================
+   GENERAL
+=============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
 body{
 
-    margin:0;
+    background:#f4f7fb;
 
-    padding:0;
-
-    font-family:'Poppins',sans-serif;
-
-    background:#f4f7fc;
-
-}
-
-h1{
-    text-align:center;
     color:#333;
-    margin-bottom:40px;
+
 }
+
+/* ===============================
+   TOP HEADER
+=============================== */
+
+ .top-bar{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    padding:35px 50px;
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+ .header-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    width:100%;
+
+}
+
+.header-left{
+
+    flex:1;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    gap:18px;
+
+}
+
+.export-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+
+
+.export-btn{
+
+    border:none;
+
+    padding:11px 22px;
+
+    border-radius:10px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.pdf-btn{
+
+    background:#2563eb;
+
+}
+
+.pdf-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+.excel-btn{
+
+    background:#16a34a;
+
+}
+
+.excel-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+.logout-btn{
+
+    background:#dc2626;
+
+    color:white;
+
+    border:none;
+
+    padding:11px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    background:#b91c1c;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===============================
+   DASHBOARD CARDS
+=============================== */
 
 .cards{
+
+    width:92%;
+
+    margin:45px auto;
+
     display:flex;
-    justify-content:center;
+
     gap:25px;
+
+    justify-content:center;
+
     flex-wrap:wrap;
-    margin:30px;
+
 }
 
 .card{
 
-    width:260px;
+    flex:1;
+
+    min-width:250px;
 
     background:white;
 
-    padding:25px;
+    border-radius:20px;
 
-    border-radius:15px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
-    transition:0.3s;
+    padding:30px;
 
     text-align:center;
 
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+    transition:.3s;
+
 }
+
 .card:hover{
 
     transform:translateY(-8px);
 
-    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
 
 }
 
 .card h2{
 
-    color:#666;
-    margin-bottom:15px;
+    color:#6b7280;
+
+    font-size:20px;
+
+    margin-bottom:18px;
 
 }
 
@@ -60,14 +222,58 @@ h1{
 
     font-size:38px;
 
-    font-weight:bold;
+    color:#111827;
 
-    margin-top:15px;
+    font-weight:700;
 
 }
+
+.sales-card{
+
+    border-top:6px solid #16a34a;
+
+}
+
+.profit-card{
+
+    border-top:6px solid #2563eb;
+
+}
+
+.product-card{
+
+    border-top:6px solid #7c3aed;
+
+}
+
+.top-card{
+
+    border-top:6px solid #f59e0b;
+
+}
+
+/* ===============================
+   SECTION HEADINGS
+=============================== */
+
+h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    margin:55px 0 25px;
+
+    color:#1f2937;
+
+}
+/* ===============================
+   TABLES
+=============================== */
+
 table{
 
-    width:90%;
+    width:92%;
 
     margin:30px auto;
 
@@ -75,25 +281,25 @@ table{
 
     background:white;
 
-    border-radius:15px;
+    border-radius:18px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 
 }
 
 th{
 
-    background:#0d6efd;
+    background:#2563eb;
 
     color:white;
 
-    padding:18px;
+    padding:16px;
 
-    font-size:17px;
+    font-size:16px;
 
-    letter-spacing:0.5px;
+    letter-spacing:.5px;
 
 }
 
@@ -103,128 +309,223 @@ td{
 
     text-align:center;
 
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #eeeeee;
 
 }
-tr:hover{
 
-    background:#f5f9ff;
-
-    transition:0.3s;
-
-}
 tbody tr:nth-child(even){
 
-    background:#fafafa;
+    background:#f8fafc;
 
 }
-h2{
-    text-align:center;
-    margin-top:50px;
+
+tbody tr:hover{
+
+    background:#eef4ff;
+
+    transition:.3s;
+
 }
- 
-.form-container{
-    width:80%;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+/* ===============================
+   CHARTS
+=============================== */
+
+.charts{
+
+    width:92%;
+
+    margin:30px auto;
 
     display:flex;
-    flex-wrap:wrap;
+
+    gap:25px;
+
     justify-content:center;
-    gap:15px;
+
+    flex-wrap:wrap;
+
 }
 
-.form-container input{
-    padding:12px;
-    width:220px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
+.chart-container{
+
+    flex:1;
+
+    min-width:420px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
 }
 
-.form-container button{
-    padding:12px 25px;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+.chart-container h3{
+
+    text-align:center;
+
+    color:#374151;
+
+    margin-bottom:20px;
+
 }
 
-.form-container button:hover{
-    background:#0b5ed7;
+.chart-container canvas{
+
+    width:100%!important;
+
+    height:360px!important;
+
 }
-.search-box{
-    width:80%;
-    margin:30px auto;
-    text-align:right;
+
+/* ===============================
+   SEARCH & FILTER
+=============================== */
+
+ 
+ /* ===============================
+   SEARCH & FILTER
+=============================== */
+
+.search-filter{
+
+    width:92%;
+
+    margin:20px auto 30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
 }
 
 .search-box input{
-    width:300px;
-    padding:10px;
-    font-size:16px;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-.filter-box{
 
-    width:80%;
-    margin:15px auto;
-    text-align:right;
+    width:360px;
+
+    padding:14px 18px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,.18);
 
 }
 
 .filter-box select{
 
-    width:200px;
-    padding:10px;
-    font-size:16px;
-    border-radius:8px;
+    width:220px;
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    background:#fff;
+
+    transition:.3s;
 
 }
-.header{
 
-    width:100%;
-    padding:35px;
+.filter-box select:focus{
 
-    text-align:center;
+    border-color:#2563eb;
 
-    background:linear-gradient(135deg,#0d6efd,#6610f2);
+    box-shadow:0 0 8px rgba(37,99,235,.18);
+
+}
+/* ===============================
+   FORM
+=============================== */
+
+.form-container{
+
+    width:92%;
+
+    margin:40px auto 60px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.form-container input{
+
+    width:220px;
+
+    padding:12px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.form-container input:focus{
+
+    border-color:#2563eb;
+
+}
+
+.form-container button{
+
+    background:#2563eb;
 
     color:white;
 
-    margin-bottom:30px;
-
-}
-
-.header h1{
-
-    margin:0;
-    font-size:40px;
-
-}
-
-.header p{
-
-    margin-top:10px;
-
-    font-size:18px;
-
-    opacity:0.9;
-
-}
-button{
-
-    padding:10px 18px;
-
     border:none;
 
-    border-radius:8px;
+    padding:12px 24px;
+
+    border-radius:10px;
 
     cursor:pointer;
 
@@ -232,110 +533,152 @@ button{
 
     font-weight:600;
 
-    transition:0.3s;
-
-    margin:5px;
-
-}
-.form-container button{
-
-    background:#198754;
-
-    color:white;
+    transition:.3s;
 
 }
 
 .form-container button:hover{
 
-    background:#157347;
+    background:#1d4ed8;
 
-    transform:scale(1.05);
+    transform:translateY(-2px);
 
 }
-button:nth-child(2){
 
-    background:#dc3545;
+/* ===============================
+   TABLE ACTION BUTTONS
+=============================== */
+
+table button{
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    margin:3px;
+
+    transition:.3s;
+
+}
+
+table button:first-child{
+
+    background:#f59e0b;
 
     color:white;
 
 }
 
-button:nth-child(2):hover{
+table button:first-child:hover{
 
-    background:#bb2d3b;
-
-}
-button:first-child{
-
-    background:#ffc107;
-
-    color:black;
+    background:#d97706;
 
 }
 
-button:first-child:hover{
+table button:last-child{
 
-    background:#e0a800;
+    background:#dc2626;
 
-}
-.sales-card{
-
-    border-top:6px solid #198754;
+    color:white;
 
 }
 
-.profit-card{
+table button:last-child:hover{
 
-    border-top:6px solid #0d6efd;
+    background:#b91c1c;
+
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media(max-width:992px){
+
+    .header-content{
+
+        flex-direction:column;
+
+        gap:25px;
+
+    }
+
+    .header-right{
+
+        width:100%;
+
+        align-items:flex-start;
+
+    }
+
+    .cards{
+
+        flex-direction:column;
+
+    }
+
+    .chart-container{
+
+        min-width:100%;
+
+    }
+
+    .search-filter{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .search-box input,
+
+    .filter-box select{
+
+        width:100%;
+
+    }
 
 }
 
-.product-card{
+@media(max-width:768px){
 
-    border-top:6px solid #6f42c1;
+    .top-bar{
 
-}
-/* Charts Layout */
-.charts{
-    width:90%;
-    margin:30px auto;
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    align-items:flex-start;
-    flex-wrap:wrap;
-}
+        padding:25px;
 
-.chart-container{
-    flex:1;
-    min-width:400px;
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
+    }
 
-.chart-container canvas{
-    width:100% !important;
-    height:350px !important;
-}
-.top-card{
+    .dashboard-title h1{
 
-    border-top:6px solid #ff9800;
+        font-size:28px;
 
-}
-.export-btn {
-    background: #198754;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    }
 
-.export-btn:hover {
-    background: #146c43;
-    transform: scale(1.05);
+    .subtitle{
+
+        font-size:16px;
+
+    }
+
+    .form-container input,
+
+    .form-container button{
+
+        width:100%;
+
+    }
+
+    table{
+
+        font-size:14px;
+
+    }
+
 }
