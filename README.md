@@ -1,33 +1,39 @@
 # 📊 Sales Performance Dashboard
 
-A full-stack Sales Performance Dashboard built using **Spring Boot**, **MySQL**, **HTML**, **CSS**, **JavaScript**, and **Chart.js**. The application helps businesses monitor sales performance, visualize analytics, and manage sales records efficiently.
+A modern Full-Stack Sales Performance Dashboard built using **Spring Boot**, **MySQL**, **HTML**, **CSS**, **JavaScript**, and **Chart.js**. The application helps businesses monitor sales performance, visualize analytics, and manage sales records efficiently through an interactive dashboard.
 
 ---
 
 ## 🚀 Features
 
-- 📈 Dashboard displaying Total Sales, Total Profit, and Total Products
-- 🏆 Top Selling Product
-- ➕ Add New Sales Record
-- ✏️ Update Existing Sales
-- ❌ Delete Sales Record
+- 🔐 Secure Login Page
+- 📈 Dashboard displaying:
+  - Total Sales
+  - Total Profit
+  - Total Products
+  - Top Selling Product
+- 📊 Sales by Region (Bar Chart)
+- 🥧 Region Distribution (Pie Chart)
+- 📅 Monthly Sales Trend
 - 🔍 Search Products
 - 🌍 Filter Products by Region
-- 📊 Sales by Region (Bar Chart)
-- 🥧 Sales Distribution (Pie Chart)
-- 📅 Monthly Sales Trend (Line Chart)
-- 💾 MySQL Database Integration
-- 🔄 REST API using Spring Boot
+- ➕ Add New Sales Record
+- ✏️ Update Existing Sales
+- 🗑️ Delete Sales Record
+- 📄 Export Dashboard as PDF
+- 📊 Export Data to Excel
+- 🎨 Responsive and Professional User Interface
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 ### Backend
-- Java
+- Java 17
 - Spring Boot
 - Spring Data JPA
-- REST API
+- Hibernate
+- MySQL
 
 ### Frontend
 - HTML5
@@ -35,102 +41,130 @@ A full-stack Sales Performance Dashboard built using **Spring Boot**, **MySQL**,
 - JavaScript
 - Chart.js
 
-### Database
-- MySQL
-
 ### Tools
 - Eclipse IDE
 - Maven
 - Git
 - GitHub
-- Postman
+
+---
+
+## 📸 Application Screenshots
+
+### Login Page
+
+> *(Add login page screenshot here)*
+
+![Login Page](screenshots/login-page.png)
+
+---
+
+### Dashboard
+
+> *(Add dashboard screenshot here)*
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### Sales Analytics
+
+> *(Add analytics screenshot here)*
+
+![Analytics](screenshots/analytics.png)
 
 ---
 
 ## 📂 Project Structure
 
 ```
-salesdashboard
+Sales-Performance-Dashboard
 │
 ├── src
-│   ├── controller
-│   ├── service
-│   ├── repository
-│   ├── entity
-│   ├── dto
-│   └── resources
+│   ├── main
+│   │   ├── java
+│   │   ├── resources
+│   │   │   ├── static
+│   │   │   ├── templates
+│   │   │   └── application.properties
+│
+├── screenshots
 │
 ├── pom.xml
-└── README.md
+├── README.md
+└── mvnw
 ```
 
 ---
 
-## 📷 Screenshots
+## ⚙️ Installation
 
-(Add screenshots here after capturing them.)
-
-### Dashboard
-
-<img width="100%" src="images/dashboard.png">
-
-### Charts
-
-<img width="100%" src="images/charts.png">
-
----
-
-## ▶️ How to Run
-
-1. Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/hemaharshini-DA/Sales-Performance-Dashboard.git
 ```
 
-2. Open in Eclipse or IntelliJ IDEA
+### Open the project
 
-3. Configure MySQL in `application.properties`
+Import the project into Eclipse or IntelliJ IDEA as a Maven project.
 
-4. Run
+### Configure MySQL
+
+Update the database configuration in:
+
+```
+src/main/resources/application.properties
+```
+
+Example:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/salesdashboard
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+```
+
+### Run the application
+
+Run:
 
 ```
 SalesdashboardApplication.java
 ```
 
-5. Open
+Open your browser:
 
 ```
-http://localhost:8080
+http://localhost:8080/login.html
 ```
 
 ---
 
-## 📡 REST API Endpoints
+## 📈 Future Improvements
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| GET | /sales | Get All Sales |
-| POST | /save | Add Sale |
-| PUT | /update/{id} | Update Sale |
-| DELETE | /delete/{id} | Delete Sale |
-| GET | /total-sales | Total Sales |
-| GET | /total-profit | Total Profit |
-| GET | /sales-count | Total Products |
-| GET | /sales-by-region | Sales by Region |
-| GET | /top-product | Top Selling Product |
-| GET | /monthly-sales | Monthly Sales |
+- Role-based authentication
+- Sales forecasting using Machine Learning
+- Email reports
+- Dark mode
+- Cloud deployment
+- User management
+- Mobile responsive enhancements
 
 ---
 
-## 🔮 Future Enhancements
+## 🎯 Learning Outcomes
 
-- User Authentication
-- Export to Excel/PDF
-- Dark Mode
-- Sales Forecasting
-- Product Images
-- Responsive Mobile Dashboard
+This project helped me learn:
+
+- Spring Boot REST APIs
+- CRUD Operations
+- MySQL Database Integration
+- JPA & Hibernate
+- Frontend Development using HTML, CSS & JavaScript
+- Data Visualization using Chart.js
+- PDF & Excel Export
+- Git & GitHub Version Control
 
 ---
 
@@ -140,3 +174,9 @@ http://localhost:8080
 
 GitHub:
 https://github.com/hemaharshini-DA
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
