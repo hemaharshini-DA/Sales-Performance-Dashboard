@@ -1,6 +1,3 @@
-// =======================
-// Global Variables
-// =======================
 if (sessionStorage.getItem("loggedIn") !== "true") {
 
     window.location.href = "login.html";
@@ -8,37 +5,29 @@ if (sessionStorage.getItem("loggedIn") !== "true") {
 }
 let editingId = null;
 
-// =======================
-// Total Sales
-// =======================
-fetch("http://localhost:8080/total-sales")
+ 
+fetch("http://localhost:8081/total-sales")
 .then(response => response.json())
 .then(data => {
     document.getElementById("totalSales").innerHTML = "₹" + data;
 });
 
-// =======================
-// Total Profit
-// =======================
-fetch("http://localhost:8080/total-profit")
+ 
+fetch("http://localhost:8081/total-profit")
 .then(response => response.json())
 .then(data => {
     document.getElementById("totalProfit").innerHTML = "₹" + data;
 });
 
-// =======================
-// Sales Count
-// =======================
-fetch("http://localhost:8080/sales-count")
+
+fetch("http://localhost:8081/sales-count")
 .then(response => response.json())
 .then(data => {
     document.getElementById("salesCount").innerHTML = data;
 });
 
-// =======================
-// Top Selling Product
-// =======================
-fetch("http://localhost:8080/top-product")
+ 
+fetch("http://localhost:8081/top-product")
 .then(response => response.json())
 .then(data => {
 
@@ -46,10 +35,8 @@ fetch("http://localhost:8080/top-product")
         data.productName + "<br>₹" + data.sales;
 
 });
-// =======================
-// Sales By Region Table + Charts
-// =======================
-fetch("http://localhost:8080/sales-by-region")
+ 
+fetch("http://localhost:8081/sales-by-region")
 .then(response => response.json())
 .then(data => {
 
@@ -76,9 +63,7 @@ fetch("http://localhost:8080/sales-by-region")
 
     });
 
-    // =======================
-    // Bar Chart
-    // =======================
+     
     const ctx = document.getElementById("salesChart").getContext("2d");
 
     new Chart(ctx, {
@@ -108,9 +93,7 @@ fetch("http://localhost:8080/sales-by-region")
         }
     });
 
-    // =======================
-    // Pie Chart
-    // =======================
+     
     const pieCtx = document.getElementById("pieChart").getContext("2d");
 
     new Chart(pieCtx, {
@@ -141,10 +124,8 @@ fetch("http://localhost:8080/sales-by-region")
 
 });
 
-// =======================
-// All Products Table
-// =======================
-fetch("http://localhost:8080/sales")
+ 
+fetch("http://localhost:8081/sales")
 .then(response => response.json())
 .then(data => {
 
@@ -181,9 +162,6 @@ fetch("http://localhost:8080/sales")
 
 });
 
-// =======================
-// Save Sale
-// =======================
 function saveSale() {
 
     let sale = {
@@ -196,7 +174,7 @@ function saveSale() {
 
     };
 
-    fetch("http://localhost:8080/save", {
+    fetch("http://localhost:8081/save", {
 
         method: "POST",
 
@@ -220,9 +198,7 @@ function saveSale() {
 
 }
 
-// =======================
-// Update Sale
-// =======================
+ 
 function updateSale() {
 
     let sale = {
@@ -235,7 +211,7 @@ function updateSale() {
 
     };
 
-    fetch("http://localhost:8080/update/" + editingId, {
+    fetch("http://localhost:8081/update/" + editingId, {
 
         method: "PUT",
 
@@ -259,14 +235,12 @@ function updateSale() {
 
 }
 
-// =======================
-// Delete Sale
-// =======================
+ 
 function deleteSale(id) {
 
     if(confirm("Are you sure you want to delete this product?")) {
 
-        fetch("http://localhost:8080/delete/" + id, {
+        fetch("http://localhost:8081/delete/" + id, {
 
             method: "DELETE"
 
@@ -286,9 +260,7 @@ function deleteSale(id) {
 
 }
 
-// =======================
-// Edit Sale
-// =======================
+ 
 function editSale(id, productName, sales, profit, region, saleDate) {
 
     editingId = id;
@@ -307,9 +279,7 @@ function editSale(id, productName, sales, profit, region, saleDate) {
 
 }
 
-// =======================
-// Search Product
-// =======================
+ 
 function searchProduct() {
 
     let input = document.getElementById("searchInput").value.toUpperCase();
@@ -335,9 +305,7 @@ function searchProduct() {
 
 }
 
-// =======================
-// Filter Region
-// =======================
+ 
 function filterRegion() {
 
     let filter = document.getElementById("regionFilter").value.toUpperCase();
@@ -369,12 +337,10 @@ function filterRegion() {
 
     }
 }
-	// =======================
-	// Monthly Sales Chart
-	// =======================
+	 
 	async function loadMonthlySales() {
 
-	    const response = await fetch("http://localhost:8080/monthly-sales");
+	    const response = await fetch("http://localhost:8081/monthly-sales");
 	    const data = await response.json();
 
 	    const labels = data.map(item => item.month);
@@ -405,10 +371,10 @@ function filterRegion() {
 	loadMonthlySales();
 
 	function exportExcel() {
-	    window.location.href = "http://localhost:8080/export/excel";
+	    window.location.href = "http://localhost:8081/export/excel";
 	}
 	function exportPDF() {
-	    window.location.href = "http://localhost:8080/export/pdf";
+	    window.location.href = "http://localhost:8081/export/pdf";
 	}
 	function logout() {
 
